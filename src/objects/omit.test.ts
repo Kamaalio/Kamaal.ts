@@ -1,4 +1,4 @@
-import { omit } from '../../src/objects';
+import omit from './omit';
 
 describe('omit', () => {
   it('omits', () => {

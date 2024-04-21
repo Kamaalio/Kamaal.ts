@@ -13,7 +13,7 @@
   "scripts": {
     "build": "tsc",
     "test": "jest",
-    "lint": "eslint src/index.ts src/**/*.ts tests/**/*.ts",
+    "lint": "eslint src/index.ts src/**/*.ts",
     "prepare": "husky",
     "prepublish": "rm -rf dist && yarn build"
   },
