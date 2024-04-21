@@ -15,11 +15,11 @@
     "test": "jest",
     "lint": "prettier --check . && eslint src/index.ts src/**/*.ts",
     "prepare": "husky",
-    "prepublish": "rm -rf dist && yarn build",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "deploy": "sh scripts/publish.sh"
   },
   "peerDependencies": {},
-  "name": "kamaal",
+  "name": "@kamaalio/kamaal",
   "author": "Kamaal Farah",
   "devDependencies": {
     "@babel/core": "^7.24.4",

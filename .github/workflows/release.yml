@@ -1,0 +1,27 @@
+name: Release
+on:
+  push:
+    tags:
+      - '*'
+jobs:
+  build:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Use Node 21.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 21.x
+          registry-url: https://registry.npmjs.org
+
+      - name: Install deps and build (with cache)
+        uses: bahmutov/npm-install@v1
+
+      - name: Publish ${{ github.ref_name }}
+        run: npm run deploy
+        env:
+          VERSION: ${{ github.ref_name }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
