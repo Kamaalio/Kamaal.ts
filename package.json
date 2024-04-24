@@ -21,6 +21,9 @@
   "peerDependencies": {},
   "name": "@kamaalio/kamaal",
   "author": "Kamaal Farah",
+  "dependencies": {
+    "@thames/monads": "^0.6.2"
+  },
   "devDependencies": {
     "@babel/core": "^7.24.4",
     "@babel/preset-env": "^7.24.4",
