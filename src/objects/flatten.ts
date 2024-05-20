@@ -1,4 +1,4 @@
-function _flatten<Result extends object>(
+function _flatten<Result extends Record<string, unknown>>(
   obj: Record<string, unknown>,
   recursiveContext?: { parentKey: string; result: Result }
 ): Result {
@@ -17,7 +17,9 @@ function _flatten<Result extends object>(
   }, initialResult);
 }
 
-function flatten<Result extends object>(obj: Record<string, unknown>): Result {
+function flatten<Result extends Record<string, unknown>>(
+  obj: Record<string, unknown>
+): Result {
   return _flatten(obj);
 }
 
