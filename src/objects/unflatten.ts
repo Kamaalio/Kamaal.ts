@@ -17,7 +17,7 @@ function setNestedValue<Result extends object>(
   };
 }
 
-function unflatten<Result extends object, Delimiter extends string>(
+export function unflatten<Result extends object, Delimiter extends string>(
   data: object,
   delimiter: Character<Delimiter>
 ): Result {

@@ -17,7 +17,7 @@ function _flatten<Result extends Record<string, unknown>>(
   }, initialResult);
 }
 
-function flatten<Result extends Record<string, unknown>>(
+export function flatten<Result extends Record<string, unknown>>(
   obj: Record<string, unknown>
 ): Result {
   return _flatten(obj);
