@@ -1,6 +1,5 @@
-yarn
+pnpm i
 rm -rf dist
-yarn build
+pnpm build
 npx ts-node scripts/deployment-package-json.ts "${VERSION:-null}"
-cd dist
-npm publish --access public
+pnpm publish --access public --no-git-checks
