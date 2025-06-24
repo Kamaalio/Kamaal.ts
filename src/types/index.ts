@@ -1,3 +1,3 @@
-export * from './strings';
-export * from './arrays';
-export * from './objects';
+export type * from './strings.js';
+export type * from './arrays.js';
+export type * from './objects.js';

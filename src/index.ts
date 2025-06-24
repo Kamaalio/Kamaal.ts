@@ -1,5 +1,5 @@
-export * as objects from './objects';
-export * as maths from './maths';
-export * as strings from './strings';
-export * as arrays from './arrays';
-export * as types from './types';
+export * as objects from './objects/index.js';
+export * as maths from './maths/index.js';
+export * as strings from './strings/index.js';
+export * as arrays from './arrays/index.js';
+export type * as types from './types/index.js';

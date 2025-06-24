@@ -1,1 +1,1 @@
-export * from './isNumber';
+export * from './isNumber.js';

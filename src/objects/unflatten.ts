@@ -1,5 +1,5 @@
-import type { NonEmptyArray } from '../types/arrays';
-import type { Character } from '../types/strings';
+import type { NonEmptyArray } from '../types/arrays.js';
+import type { Character } from '../types/strings.js';
 
 function setNestedValue<Result extends object>(
   obj: Result,
