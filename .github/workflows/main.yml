@@ -1,35 +1,59 @@
 name: CI
-on: [push]
+
+on:
+  push:
+
 concurrency:
-  group: ${{ github.ref }}
+  group: ${{ github.ref }}-ci
   cancel-in-progress: true
+
 jobs:
-  build:
-    name: Build, lint, and test on Node ${{ matrix.node }} and ${{ matrix.os }}
-
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        node: ['21.x']
-        os: [ubuntu-latest, macOS-latest]
-
+  quality:
+    name: Quality
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v2
+      - name: Git - Checkout
+        uses: actions/checkout@v4
 
-      - name: Use Node ${{ matrix.node }}
+      - name: Use Node 22.x
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node }}
+          node-version: 22.x
+          registry-url: https://registry.npmjs.org
 
-      - name: Install deps and build (with cache)
-        uses: bahmutov/npm-install@v1
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.12.2
 
-      - name: Lint
-        run: yarn lint
+      - name: Install modules
+        run: pnpm i
 
-      - name: Test
-        run: yarn test --ci --coverage --maxWorkers=2
+      - name: Run quality checks
+        run: pnpm quality
 
-      - name: Build
-        run: yarn build
+  test:
+    name: Test
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git - Checkout
+        uses: actions/checkout@v4
+
+      - name: Use Node 22.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+          registry-url: https://registry.npmjs.org
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.12.2
+
+      - name: Install modules
+        run: pnpm i
+
+      - name: Run tests
+        run: pnpm test

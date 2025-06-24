@@ -10,12 +10,15 @@
     "node": ">=21"
   },
   "scripts": {
+    "bootstrap:ci": "sh scripts/bootstrap-ci.sh",
     "build": "tsc",
     "test": "jest",
     "lint": "prettier --check . && eslint src/index.ts src/**/*.ts",
     "prepare": "husky",
     "format": "prettier --write .",
-    "deploy": "sh scripts/publish.sh"
+    "deploy": "sh scripts/publish.sh",
+    "type-check": "tsc --noEmit",
+    "quality": "pnpm lint && pnpm type-check"
   },
   "name": "@kamaalio/kamaal",
   "author": "Kamaal Farah",
