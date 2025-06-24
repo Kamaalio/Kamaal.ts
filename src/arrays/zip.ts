@@ -14,11 +14,9 @@ function zipUnequalled<TargetElement1, TargetElement2>(
   array2: TargetElement2[]
 ): Array<[TargetElement1, TargetElement2]> {
   if (array1.length >= array2.length) {
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     return array2.map((item, index) => [array1[index]!, item]);
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   return array1.map((item, index) => [item, array2[index]!]);
 }
 

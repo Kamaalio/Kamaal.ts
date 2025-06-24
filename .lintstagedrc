@@ -1,4 +1,0 @@
-{
-  "*": "yarn pretty-quick --staged",
-  "*.ts": "yarn lint --fix"
-}
