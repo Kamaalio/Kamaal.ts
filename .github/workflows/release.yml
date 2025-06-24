@@ -26,7 +26,7 @@ jobs:
         run: pnpm i
 
       - name: Publish ${{ github.ref_name }}
-        run: pnpm deploy
+        run: pnpm release
         env:
           VERSION: ${{ github.ref_name }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

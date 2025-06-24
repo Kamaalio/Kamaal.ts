@@ -1,5 +1,5 @@
 {
-  "version": "0.7.0",
+  "version": "0.7.2",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -16,7 +16,7 @@
     "lint": "prettier --check . && eslint src/index.ts src/**/*.ts",
     "prepare": "husky",
     "format": "prettier --write .",
-    "deploy": "sh scripts/publish.sh",
+    "release": "sh scripts/publish.sh",
     "type-check": "tsc --noEmit",
     "quality": "pnpm lint && pnpm type-check"
   },
@@ -38,6 +38,7 @@
     "lint-staged": "^16.1.2",
     "prettier": "^3.6.0",
     "ts-node": "^10.9.2",
+    "tsx": "^4.20.3",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.35.0"
   },
