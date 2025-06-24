@@ -1,10 +1,13 @@
 export const compactMap = <TargetElement, TransformedElement>(
   array: TargetElement[],
-  transformer: (value: TargetElement) => TransformedElement | null | undefined
+  transformer: (
+    value: TargetElement,
+    index: number
+  ) => TransformedElement | null | undefined
 ): TransformedElement[] => {
   const newArray: TransformedElement[] = [];
-  array.forEach((item) => {
-    const transformedItem = transformer(item);
+  array.forEach((item, index) => {
+    const transformedItem = transformer(item, index);
     if (transformedItem == null) {
       return;
     }
