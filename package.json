@@ -21,9 +21,6 @@
   "peerDependencies": {},
   "name": "@kamaalio/kamaal",
   "author": "Kamaal Farah",
-  "dependencies": {
-    "@thames/monads": "^0.6.2"
-  },
   "devDependencies": {
     "@babel/core": "^7.24.4",
     "@babel/preset-env": "^7.24.4",
@@ -47,5 +44,6 @@
     "ts-node": "^10.9.2",
     "typescript": "~5.3"
   },
-  "resolutions": {}
+  "resolutions": {},
+  "packageManager": "yarn@1.22.21+sha1.1959a18351b811cdeedbd484a8f86c3cc3bbaf72"
 }

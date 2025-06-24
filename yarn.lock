@@ -1360,11 +1360,6 @@
     eslint-visitor-keys "^3.4.3"
     espree "^9.6.1"
 
-"@thames/monads@^0.6.2":
-  version "0.6.2"
-  resolved "https://registry.yarnpkg.com/@thames/monads/-/monads-0.6.2.tgz#471fcbbc21f4beb578156f18c2e27c82af51a273"
-  integrity sha512-LxsJ5g4kYK/VS+s+b5fEz6GG1v5eyysURaDE3hOjQB1vmWaCsRoqAKOwpl8YF9FZ86on1BwxIHev3ZF8u41X7g==
-
 "@tsconfig/node10@^1.0.7":
   version "1.0.11"
   resolved "https://registry.yarnpkg.com/@tsconfig/node10/-/node10-1.0.11.tgz#6ee46400685f130e278128c7b38b7e031ff5b2f2"
